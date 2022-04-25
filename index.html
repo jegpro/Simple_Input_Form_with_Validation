@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+ <html>
+	<body onload="setFocus()">
+		<meta charset="utf-8">
+		<title>Jegor Pronkin анкета</title>
+		<div class="headertext" style="position: relative; top: 20px;"><h1>Анкета</h1></div>
+		<i>Пожалуйста, заполните анкету</i>
+					<form name="myForm" action="#" style="position: relative; top: 5px;">
+
+						<b>Имя:</b>
+						<input style="position: relative; left: 37px; width: 130px;" type="text" name="fname" id="firstname" placeholder="Введите Имя..."  required><br>
+
+					<div style="position: relative; top: 5px;">
+						<b>Фамилия:</b>
+						<input style="width: 130px;" type="text" name="lname" placeholder="Введите Фамилию..." required><br>
+					</div>
+
+					<div style="position: relative; top: 10px;">
+						<b>E-mail:</b>
+						<input style="position: relative; left: 23px;" type="text" name="emaill" placeholder="Введите E-mail..." required></input><br>
+					</div>
+
+						<input style="position: relative; top: 15px; left: 79px;" type="submit" value="Показать" onclick="validateForm()">
+					  </form>
+
+					<!--Скрипт проверки на ввод данных и фокусировка при загрузке на поле "Имя"-->
+					  
+					  <script>
+					function setFocus()
+					{
+     					document.getElementById("firstname").focus();
+					}
+
+					function validateForm() {
+  						let x = document.forms["myForm"]["fname"].value;
+						  let a = document.forms["myForm"]["lname"].value;
+						  let b = document.forms["myForm"]["emaill"].value;
+  						if (x == "" || a == "" || b == "") {
+   						alert("Пустые поля должны быть заполнены!");
+  						}
+						else {
+						alert("Имя : " + x +'\n' + "Фамилия : " + a + '\n' + "E-mail : " + b);
+						}
+						return false;
+						}
+						</script>
+		</body>
+</html>
+
